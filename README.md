@@ -15,9 +15,8 @@ Script de instalação automatizada do TeaSpeak Server com configurações otimi
 ## Instalação
 
 ### Requisitos
-- Sistema operacional: **Debian/Ubuntu**
+- Sistema operacional: **Debian11**
 - Usuário: **root**
-- Conexão com internet
 
 ### Executar instalação
 
