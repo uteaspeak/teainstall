@@ -90,16 +90,16 @@ cd ~/TeaSpeak
 
 ```
 /home/teaspeak/
-├── TeaSpeak/                   # Arquivos do servidor
-│   ├── config.yml             # Configuração principal
-│   ├── TeaData.sqlite         # Banco de dados
-│   ├── files/                 # Arquivos de áudio/ícones
-│   └── geoloc/                # Dados de geolocalização
-├── resources/                  # Scripts de automação
-│   ├── anticrash.sh           # Monitor de processo
-│   └── teaspeakbackup.sh      # Sistema de backup
-└── backups/                    # Backups automáticos
-    ├── backup.log             # Log de backups
+├── TeaSpeak/                    # Arquivos do servidor
+│   ├── config.yml               # Configuração principal
+│   ├── TeaData.sqlite           # Banco de dados
+│   ├── files/                   # Arquivos de áudio/ícones
+│   └── geoloc/                  # Dados de geolocalização
+├── resources/                   # Scripts de automação
+│   ├── anticrash.sh             # Monitor de processo
+│   └── teaspeakbackup.sh        # Sistema de backup
+└── backups/                     # Backups automáticos
+    ├── backup.log               # Log de backups
     └── teaspeak_backup_*.tar.gz
 ```
 
