@@ -214,17 +214,17 @@ iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 iptables -A INPUT -p tcp --dport 10101 -j ACCEPT
 iptables -A INPUT -p tcp --dport 30303 -j ACCEPT
 
-# UDP: 10500-10516 com rate limiting
+# UDP: 10500-10530 com rate limiting
 iptables -N TS3_UDP
-iptables -A INPUT -p udp --dport 10500:10516 -j TS3_UDP
+iptables -A INPUT -p udp --dport 10500:10530 -j TS3_UDP
 iptables -A TS3_UDP -m conntrack --ctstate NEW -m limit --limit 50/sec --limit-burst 100 -j ACCEPT
 iptables -A TS3_UDP -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 iptables -A TS3_UDP -m limit --limit 5/min -j LOG --log-prefix "TS3 DDoS: "
 iptables -A TS3_UDP -j DROP
 
 # Mitigacao de flood com recent
-iptables -A INPUT -p udp --dport 10500:10516 -m recent --name TS3_ATTACK --set
-iptables -A INPUT -p udp --dport 10500:10516 -m recent --name TS3_ATTACK --update --seconds 60 --hitcount 100 -j DROP
+iptables -A INPUT -p udp --dport 10500:10530 -m recent --name TS3_ATTACK --set
+iptables -A INPUT -p udp --dport 10500:10530 -m recent --name TS3_ATTACK --update --seconds 60 --hitcount 100 -j DROP
 
 # ICMP limitado
 iptables -A INPUT -p icmp -m limit --limit 1/s -j ACCEPT
@@ -330,7 +330,7 @@ echo -e "  - Firewall: ${GREEN}OK${NC} - iptables configurado"
 echo ""
 echo -e "${CYAN}Portas abertas:${NC}"
 echo -e "  - TCP: 22, 10101, 30303"
-echo -e "  - UDP: 10500-10516 com rate limiting"
+echo -e "  - UDP: 10500-10530 com rate limiting"
 
 echo ""
 echo -e "${CYAN}Verificar firewall:${NC}"
